@@ -13,13 +13,13 @@ public class LandingPage extends Composite {
     interface LandingPageBinder extends UiBinder<Widget, LandingPage> {}
     private static LandingPageBinder uiBinder = GWT.create(LandingPageBinder.class);
 
-    @UiField
-    protected Button pulsante;
+//    @UiField
+//    protected Button pulsante;
 
     @UiConstructor
     public LandingPage() {
         initWidget(uiBinder.createAndBindUi(this));
-        pulsante.setText("Test");
+//        pulsante.setText("Test");
     }
 
 }

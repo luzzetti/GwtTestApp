@@ -1,5 +1,10 @@
 <module>
     <inherits name="com.google.gwt.user.User"/>
+    <inherits name="gwt.material.design.GwtMaterialWithJQuery"/>
+    <inherits name="gwt.material.design.GwtMaterialDesignBasic" />
+    <inherits name="gwt.material.design.addins.GwtMaterialAddins" />
+    <inherits name="gwt.material.design.GwtMaterialTable" />
+
     <entry-point class="it.luzzetti.client.App"/>
     <!--<source path="client"/>-->
     <!--<public path="public"/>-->
