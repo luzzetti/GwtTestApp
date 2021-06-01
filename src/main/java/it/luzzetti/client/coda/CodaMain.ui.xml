@@ -1,0 +1,56 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:m.html="urn:import:gwt.material.design.client.ui.html">
+
+    <m:MaterialRow>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>1</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>2</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>3</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>4</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>5</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>6</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>7</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>8</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>9</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>10</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>11</m.html:Span>
+        </m:MaterialColumn>
+        <m:MaterialColumn grid="s1" backgroundColor="RED" textColor="WHITE" padding="12" border="2px solid #ffffff"
+                          textAlign="CENTER">
+            <m.html:Span>12</m.html:Span>
+        </m:MaterialColumn>
+    </m:MaterialRow>
+
+</ui:UiBinder>

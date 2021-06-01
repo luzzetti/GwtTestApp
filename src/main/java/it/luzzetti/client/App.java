@@ -15,7 +15,6 @@ public class App implements EntryPoint {
 
     @Override
     public void onModuleLoad() {
-        logger.warning("onModuleLoad");
         RootPanel.get().add(GWT.create(LandingPage.class));
     }
 
