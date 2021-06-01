@@ -2,7 +2,6 @@
              xmlns:m="urn:import:gwt.material.design.client.ui">
 
 
-
     <m:MaterialPanel>
         <m:MaterialHeader ui:field="header">
             <m:MaterialNavBar activates="sidenavMiniExpand" backgroundColor="BLUE" shadow="1">
@@ -24,7 +23,32 @@
 
         <m:MaterialContainer ui:field="pannelloCentrale" paddingTop="70">
         </m:MaterialContainer>
-    </m:MaterialPanel>
 
+        <!-- FAB -->
+        <m:MaterialFAB>
+            <m:MaterialTooltip text="Crea" position="LEFT">
+                <m:MaterialButton type="FLOATING" backgroundColor="RED" iconType="ADD" size="LARGE"/>
+            </m:MaterialTooltip>
+            <m:MaterialFABList>
+                <m:MaterialTooltip text="Ricevente" position="LEFT">
+                    <m:MaterialAnchorButton type="FLOATING" waves="LIGHT" backgroundColor="BLUE" iconType="PERSON"/>
+                </m:MaterialTooltip>
+                <m:MaterialTooltip text="Organo" position="LEFT">
+                    <m:MaterialAnchorButton type="FLOATING" waves="LIGHT" backgroundColor="AMBER"  iconType="FAVORITE"/>
+                </m:MaterialTooltip>
+                <m:MaterialTooltip text="Equipe" position="LEFT">
+                    <m:MaterialAnchorButton type="FLOATING" waves="LIGHT" backgroundColor="INDIGO"  iconType="GROUP"/>
+                </m:MaterialTooltip>
+            </m:MaterialFABList>
+        </m:MaterialFAB>
+
+        <!-- Footer -->
+        <m:MaterialFooter backgroundColor="BLUE" type="FIXED">
+            <m:MaterialFooterCopyright>
+                <m:MaterialLabel text="© 2021 Copyright Christian Luzzetti"/>
+            </m:MaterialFooterCopyright>
+        </m:MaterialFooter>
+
+    </m:MaterialPanel>
 
 </ui:UiBinder>
