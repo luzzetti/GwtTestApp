@@ -25,6 +25,32 @@
             </m:MaterialColumn>
         </m:MaterialRow>
         <m:MaterialRow>
+            <m:MaterialColumn grid="s4">
+                <m:MaterialRow>
+                    <m:MaterialColumn grid="s12">
+                        <m:MaterialLabel>Dirty</m:MaterialLabel>
+                    </m:MaterialColumn>
+                    <m:MaterialColumn grid="s4">
+                        <m:MaterialButton ui:field="impostaDirtyTrue" margin="8" text="Set" waves="LIGHT"
+                                          textColor="WHITE"/>
+                    </m:MaterialColumn>
+                    <m:MaterialColumn grid="s4">
+                        <m:MaterialButton ui:field="impostaDirtyFalse" margin="8" text="UnSet" waves="LIGHT"
+                                          textColor="WHITE"/>
+                    </m:MaterialColumn>
+                    <m:MaterialColumn grid="s4">
+                        <m:MaterialButton ui:field="readDirtyState" margin="8" text="Read" waves="LIGHT"
+                                          textColor="WHITE"/>
+                    </m:MaterialColumn>
+                </m:MaterialRow>
+            </m:MaterialColumn>
+            <m:MaterialColumn grid="s4">
+                <m:MaterialButton ui:field="printEditorPath" margin="8" text="Path" waves="LIGHT" backgroundColor="RED"
+                                  textColor="WHITE"
+                                  iconType="POLYMER" iconPosition="RIGHT"/>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+        <m:MaterialRow>
             <m:MaterialColumn grid="s12">
                 <m:MaterialCollapsible type="POPOUT" grid="s12 m6 l8" ui:field="collapsiblesContainer">
                     <w:ElementoCodaEditor ui:field="elementoCodaEditor"/>

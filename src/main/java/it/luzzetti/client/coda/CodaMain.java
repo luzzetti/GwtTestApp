@@ -46,6 +46,11 @@ public class CodaMain extends Composite {
 
     @UiHandler("flushButton")
     public void onClickFlush(ClickEvent e) {
+        if (!driver.isDirty()) {
+            Window.alert("Non ci sono modifiche da salvare");
+            logger.warning("Non ci sono modifiche da salvare");
+            return;
+        }
         driver.flush();
         if (driver.hasErrors()) {
             Window.alert("There are errors");
@@ -55,6 +60,26 @@ public class CodaMain extends Composite {
     @UiHandler("editButton")
     public void onClickEdit(ClickEvent e) {
         driver.edit(elementoCoda);
+    }
+
+    @UiHandler("impostaDirtyTrue")
+    public void onClickSetDirtyTrue(ClickEvent e) {
+        elementoCodaEditor.impostaManualmenteIlDirtyState(true);
+    }
+
+    @UiHandler("impostaDirtyFalse")
+    public void onClickSetDirtyFalse(ClickEvent e) {
+        elementoCodaEditor.impostaManualmenteIlDirtyState(false);
+    }
+
+    @UiHandler("readDirtyState")
+    public void onClickReadDirtyState(ClickEvent e) {
+        Window.alert("" + driver.isDirty());
+    }
+
+    @UiHandler("printEditorPath")
+    public void onClickPrintEditorPath(ClickEvent e) {
+        elementoCodaEditor.stampaPathDellEditorDelegate();
     }
 
     interface Driver extends SimpleBeanEditorDriver<IsElementoCoda, ElementoCodaEditor> {
