@@ -1,0 +1,51 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui">
+
+    <ui:style>
+        .mb-0 { margin-bottom: 0; }
+    </ui:style>
+
+    <m:MaterialCollapsibleItem>
+        <m:MaterialCollapsibleHeader>
+            <m:MaterialRow addStyleNames="{style.mb-0}">
+                <m:MaterialColumn grid="s2">
+                    <m:MaterialLink iconType="CHECK_CIRCLE" iconPosition="LEFT" textColor="RED"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn grid="s2">
+                    <m:MaterialLink iconType="FAVORITE" iconPosition="LEFT" textColor="RED"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn grid="s2">
+                    <m:MaterialLabel ui:field="idValue" text="2100012" textColor="RED"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn grid="s4">
+                    <m:MaterialLabel ui:field="istanteCreazioneValue" text="20:15 - 02/06" textColor="RED"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn grid="s2" textAlign="LEFT">
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </m:MaterialCollapsibleHeader>
+        <m:MaterialCollapsibleBody>
+            <m:MaterialRow>
+                <m:MaterialColumn grid="s12">
+                    <m:MaterialLabel
+                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                    <m:MaterialTextBox ui:field="note"></m:MaterialTextBox>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+            <m:MaterialRow>
+                <m:MaterialColumn grid="s4" textAlign="LEFT">
+                    <m:MaterialIcon iconType="EDIT" iconColor="AMBER" waves="DEFAULT"
+                                    circle="true"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn grid="s4" textAlign="LEFT">
+                    <m:MaterialIcon iconType="INFO_OUTLINE" iconColor="BLUE" waves="DEFAULT"
+                                    circle="true"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn grid="s4" textAlign="LEFT">
+                    <m:MaterialIcon iconType="DELETE" iconColor="RED" waves="DEFAULT"
+                                    circle="true"/>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </m:MaterialCollapsibleBody>
+    </m:MaterialCollapsibleItem>
+</ui:UiBinder>

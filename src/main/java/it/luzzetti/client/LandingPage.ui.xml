@@ -5,7 +5,7 @@
     <m:MaterialPanel>
         <m:MaterialHeader ui:field="header">
             <m:MaterialNavBar activates="sidenavMiniExpand" backgroundColor="BLUE" shadow="1">
-                <m:MaterialNavBrand paddingLeft="60" text="gwt-material"/>
+                <m:MaterialNavBrand paddingLeft="60" text="Trapiantologia"/>
             </m:MaterialNavBar>
         </m:MaterialHeader>
 
