@@ -47,6 +47,7 @@ public class CodaMain extends Composite {
     @UiHandler("flushButton")
     public void onClickFlush(ClickEvent e) {
         driver.flush();
+        /* Ovviamente non funziona, perché sto framework deve bruciare all'inferno */
         if (driver.hasErrors()) {
             Window.alert("There are errors");
         }

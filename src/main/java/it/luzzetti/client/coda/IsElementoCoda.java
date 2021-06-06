@@ -2,6 +2,7 @@ package it.luzzetti.client.coda;
 
 import it.luzzetti.client.model.TipoRichiesta;
 
+import javax.validation.constraints.Size;
 import java.time.Instant;
 import java.util.Date;
 

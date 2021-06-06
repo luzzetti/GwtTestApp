@@ -2,6 +2,8 @@ package it.luzzetti.client.model;
 
 import it.luzzetti.client.coda.IsElementoCoda;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class RichiestaOrgano implements IsElementoCoda {
@@ -10,6 +12,8 @@ public class RichiestaOrgano implements IsElementoCoda {
     private TipoRichiesta tipoRichiesta;
     private Long idUtenteCreazione;
     private Date istanteCreazione;
+    @NotNull
+    @Size(max = 5, message = "Il nome non può avere più di 5 caratteri.")
     private String note;
 
     public RichiestaOrgano() {
