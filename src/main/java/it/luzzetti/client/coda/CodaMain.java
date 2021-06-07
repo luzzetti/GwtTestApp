@@ -10,9 +10,10 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import gwt.material.design.client.ui.MaterialCollapsible;
-import it.luzzetti.client.coda.elementocoda.ElementoCodaEditor;
-import it.luzzetti.client.model.RichiestaOrgano;
+import it.luzzetti.client.coda.elementocoda.ListElementoCodaEditor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class CodaMain extends Composite {
@@ -20,28 +21,23 @@ public class CodaMain extends Composite {
     private static final CodaMainBinder uiBinder = GWT.create(CodaMainBinder.class);
 
     @UiField
-    protected MaterialCollapsible collapsiblesContainer;
-    @UiField
-    protected ElementoCodaEditor elementoCodaEditor;
-    IsElementoCoda elementoCoda;
+    protected ListElementoCodaEditor listElementoCodaEditor;
+
+    List<IsElementoCoda> elementiCoda = new ArrayList<>();
+
     Driver driver = GWT.create(Driver.class);
 
     private Logger logger = Logger.getLogger(getClass().getName());
 
     public CodaMain() {
-        elementoCoda = new RichiestaOrgano();
-        elementoCoda.setIdValue("0");
-        elementoCoda.setIdUtenteCreazioneValue("0");
-        elementoCoda.setIstanteCreazioneValue("wathever");
-        logger.warning("Costruttore CodaMain");
         initWidget(uiBinder.createAndBindUi(this));
-        driver.initialize(elementoCodaEditor);
-        driver.edit(elementoCoda);
+        driver.initialize(listElementoCodaEditor);
+        driver.edit(elementiCoda);
     }
 
     @UiHandler("pulisciButton")
     public void onClickPulisci(ClickEvent e) {
-        elementoCodaEditor.pulisci();
+        logger.warning("onClickPulisci");
     }
 
     @UiHandler("flushButton")
@@ -54,10 +50,10 @@ public class CodaMain extends Composite {
 
     @UiHandler("editButton")
     public void onClickEdit(ClickEvent e) {
-        driver.edit(elementoCoda);
+        driver.edit(elementiCoda);
     }
 
-    interface Driver extends SimpleBeanEditorDriver<IsElementoCoda, ElementoCodaEditor> {
+    interface Driver extends SimpleBeanEditorDriver<List<IsElementoCoda>, ListElementoCodaEditor> {
     }
 
     interface CodaMainBinder extends UiBinder<Widget, CodaMain> {
