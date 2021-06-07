@@ -88,4 +88,15 @@ public class RichiestaOrgano implements IsElementoCoda {
     public void setIstanteCreazioneValue(String istanteCreazione) {
         this.istanteCreazione = new Date();
     }
+
+    @Override
+    public String toString() {
+        return "RichiestaOrgano{" +
+                "id=" + id +
+                ", tipoRichiesta=" + tipoRichiesta +
+                ", idUtenteCreazione=" + idUtenteCreazione +
+                ", istanteCreazione=" + istanteCreazione +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }

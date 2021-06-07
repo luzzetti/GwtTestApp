@@ -46,7 +46,9 @@ public class CodaMain extends Composite {
 
     @UiHandler("flushButton")
     public void onClickFlush(ClickEvent e) {
-        driver.flush();
+        logger.warning("DIRTY: " + driver.isDirty());
+        IsElementoCoda flushed = driver.flush();
+        logger.warning("Flushed: " + flushed);
         if (driver.hasErrors()) {
             Window.alert("There are errors");
         }
