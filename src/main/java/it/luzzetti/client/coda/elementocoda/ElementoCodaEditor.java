@@ -25,6 +25,7 @@ public class ElementoCodaEditor extends Composite implements Editor<IsElementoCo
     private Logger logger = Logger.getLogger(getClass().getName());
 
     public ElementoCodaEditor() {
+        logger.warning("Costruttore ElementoCodaEditor");
         initWidget(uiBinder.createAndBindUi(this));
     }
 

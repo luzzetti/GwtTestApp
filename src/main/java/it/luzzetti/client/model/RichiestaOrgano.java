@@ -3,14 +3,17 @@ package it.luzzetti.client.model;
 import it.luzzetti.client.coda.IsElementoCoda;
 
 import java.util.Date;
+import java.util.Random;
 
 public class RichiestaOrgano implements IsElementoCoda {
 
-    private Long id;
+    private static Random random = new Random();
+
+    private Long id = random.nextLong();
     private TipoRichiesta tipoRichiesta;
-    private Long idUtenteCreazione;
-    private Date istanteCreazione;
-    private String note;
+    private Long idUtenteCreazione = random.nextLong();
+    private Date istanteCreazione = new Date();
+    private String note = "";
 
     public RichiestaOrgano() {
     }
@@ -87,5 +90,16 @@ public class RichiestaOrgano implements IsElementoCoda {
     @Override
     public void setIstanteCreazioneValue(String istanteCreazione) {
         this.istanteCreazione = new Date();
+    }
+
+    @Override
+    public String toString() {
+        return "RichiestaOrgano{" +
+                "id=" + id +
+                ", tipoRichiesta=" + tipoRichiesta +
+                ", idUtenteCreazione=" + idUtenteCreazione +
+                ", istanteCreazione=" + istanteCreazione +
+                ", note='" + note + '\'' +
+                '}';
     }
 }

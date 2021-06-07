@@ -11,6 +11,8 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import gwt.material.design.client.ui.MaterialCollapsible;
 import it.luzzetti.client.coda.elementocoda.ListElementoCodaEditor;
+import it.luzzetti.client.model.RichiestaOrgano;
+import org.eclipse.jetty.util.ArrayUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ public class CodaMain extends Composite {
 
     List<IsElementoCoda> elementiCoda = new ArrayList<>();
 
+
     Driver driver = GWT.create(Driver.class);
 
     private Logger logger = Logger.getLogger(getClass().getName());
@@ -38,11 +41,12 @@ public class CodaMain extends Composite {
     @UiHandler("pulisciButton")
     public void onClickPulisci(ClickEvent e) {
         logger.warning("onClickPulisci");
+        listElementoCodaEditor.pulisci();
     }
 
     @UiHandler("flushButton")
     public void onClickFlush(ClickEvent e) {
-        driver.flush();
+        logger.warning("Flush: " + driver.flush());
         if (driver.hasErrors()) {
             Window.alert("There are errors");
         }

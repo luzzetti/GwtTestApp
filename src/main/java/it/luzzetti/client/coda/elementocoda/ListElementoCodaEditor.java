@@ -3,16 +3,21 @@ package it.luzzetti.client.coda.elementocoda;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.editor.client.CompositeEditor;
 import com.google.gwt.editor.client.EditorDelegate;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialCollapsible;
 import it.luzzetti.client.coda.IsElementoCoda;
+import it.luzzetti.client.model.RichiestaOrgano;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * The type CompositeEditor helps you to deal with lists of an unknown number of
@@ -29,13 +34,9 @@ public class ListElementoCodaEditor extends Composite
 
     // UiBinder
     private static final ListElementoCodaEditorBinder uiBinder = GWT.create(ListElementoCodaEditorBinder.class);
-
+    Logger logger = Logger.getLogger(getClass().getName());
     @UiField
     MaterialCollapsible collapsiblesContainer;
-    @UiField
-    MaterialButton aggiungiElementoButton;
-    @UiField
-    MaterialButton rimuoviUltimoElementoButton;
     @UiField
     MaterialButton rimuoviTuttoButton;
 
@@ -43,6 +44,9 @@ public class ListElementoCodaEditor extends Composite
     private CompositeEditor.EditorChain<IsElementoCoda, ElementoCodaEditor> editorChain;
     private EditorDelegate<List<IsElementoCoda>> listElementoCodaDelegate;
     private List<ElementoCodaEditor> editorList;
+
+    // Accesso alla backed list
+//    private List<IsElementoCoda> elementiCoda;
 
     public ListElementoCodaEditor() {
         initWidget(uiBinder.createAndBindUi(this));
@@ -61,13 +65,21 @@ public class ListElementoCodaEditor extends Composite
     @Override
     public void setValue(List<IsElementoCoda> elementiCoda) {
         if (editorList == null) {
+            logger.warning("editorList: VUOTA");
             editorList = new ArrayList<>();
         } else {
             // Resetto la lista di subeditor
+            logger.warning("editorList: RESET");
             editorList.forEach(editorChain::detach);
             editorList.clear();
         }
-        elementiCoda.forEach(e -> editorChain.attach(e, new ElementoCodaEditor()));
+
+        collapsiblesContainer.clear();
+        elementiCoda.forEach(e -> {
+            ElementoCodaEditor elementoCodaEditor = new ElementoCodaEditor();
+            collapsiblesContainer.add(elementoCodaEditor);
+            editorChain.attach(e, elementoCodaEditor);
+        });
     }
 
     @Override
@@ -88,6 +100,32 @@ public class ListElementoCodaEditor extends Composite
     @Override
     public void onPropertyChange(String... paths) {
         // Codice non necessario
+    }
+
+    @UiHandler("aggiungiElementoButton")
+    public void onClickAggiungiElemento(ClickEvent e) {
+        logger.warning("Verrà implementato in seguito!");
+
+        ElementoCodaEditor elementoCodaEditor = new ElementoCodaEditor();
+
+        collapsiblesContainer.add(elementoCodaEditor);
+        editorList.add(elementoCodaEditor);
+        editorChain.attach(new RichiestaOrgano(), elementoCodaEditor);
+    }
+
+    @UiHandler("rimuoviUltimoElementoButton")
+    public void onClickRimuoviUltimoElemento(ClickEvent e) {
+        Window.alert("Non ancora implementato");
+        logger.warning("Verrà implementato in seguito!");
+    }
+
+    public void pulisci() {
+        while (editorList != null && !editorList.isEmpty()) {
+            ElementoCodaEditor daRimuovere = editorList.get(0);
+            editorChain.detach(daRimuovere);
+            editorList.remove(daRimuovere);
+            collapsiblesContainer.remove(daRimuovere);
+        }
     }
 
     interface ListElementoCodaEditorBinder extends UiBinder<Widget, ListElementoCodaEditor> {
