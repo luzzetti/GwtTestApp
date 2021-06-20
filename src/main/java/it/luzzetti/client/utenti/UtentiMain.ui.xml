@@ -1,0 +1,40 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:w="urn:import:it.luzzetti.client.utenti.listautentiview">
+
+    <m:MaterialPanel>
+        <m:MaterialRow>
+            <m:MaterialColumn grid="s3">
+                <m:MaterialButton ui:field="pulisciButton" margin="8" text="PULISCI" waves="LIGHT" textColor="WHITE"
+                                  iconType="POLYMER"
+                                  iconPosition="LEFT"/>
+            </m:MaterialColumn>
+            <m:MaterialColumn grid="s3">
+                <m:MaterialButton ui:field="flushButton" margin="8" text="FLUSH" waves="LIGHT" backgroundColor="RED"
+                                  textColor="WHITE"
+                                  iconType="POLYMER" iconPosition="RIGHT"/>
+            </m:MaterialColumn>
+            <m:MaterialColumn grid="s3">
+                <m:MaterialButton ui:field="editButton"
+                                  margin="8" text="EDIT" waves="RED" backgroundColor="WHITE"
+                                  textColor="BLACK"
+                                  iconType="POLYMER" iconPosition="RIGHT" iconColor="RED"/>
+            </m:MaterialColumn>
+            <m:MaterialColumn grid="s3">
+                <m:MaterialButton ui:field="isDirtyButton"
+                                  margin="8" text="IS DIRTY" waves="RED" backgroundColor="WHITE"
+                                  textColor="BLACK"
+                                  iconType="POLYMER" iconPosition="RIGHT" iconColor="RED"/>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+        <m:MaterialRow>
+            <m:MaterialColumn grid="s12"
+                              padding="12"
+                              border="2px solid #ffffff"
+                              textAlign="CENTER">
+                <w:UtentiListEditor ui:field="utentiListEditor"></w:UtentiListEditor>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+    </m:MaterialPanel>
+
+</ui:UiBinder>

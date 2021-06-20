@@ -15,7 +15,7 @@
                 <m:MaterialBadge text="3 Richieste"/>
             </m:MaterialLink>
             <m:MaterialLink iconType="SEND" text="Gestione" ui:field="gestioneSideLink"/>
-            <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
+            <m:MaterialLink iconType="DRAFTS" text="Utenti" ui:field="utentiSideLink"/>
             <m:MaterialLink iconType="MAIL" text="All Mail"/>
             <m:MaterialLink iconType="DELETE" text="Trash"/>
             <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>

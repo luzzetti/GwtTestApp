@@ -12,6 +12,7 @@ import gwt.material.design.client.ui.MaterialContainer;
 import gwt.material.design.client.ui.MaterialLink;
 import it.luzzetti.client.coda.CodaMain;
 import it.luzzetti.client.gestione.GestioneMain;
+import it.luzzetti.client.utenti.UtentiMain;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,8 @@ public class LandingPage extends Composite {
     MaterialLink codaSideLink;
     @UiField
     MaterialLink gestioneSideLink;
+    @UiField
+    MaterialLink utentiSideLink;
     @UiField
     MaterialContainer pannelloCentrale;
     private Logger logger = Logger.getLogger(getClass().getName());
@@ -46,6 +49,13 @@ public class LandingPage extends Composite {
         logger.warning("Click On Coda: " + e.getSource());
         pannelloCentrale.clear();
         pannelloCentrale.add(pagineCreate.computeIfAbsent("gestione", a -> new GestioneMain()));
+    }
+
+    @UiHandler("utentiSideLink")
+    public void onClickUtentiSideLink(ClickEvent e) {
+        logger.warning("Click on Utenti: " + e.getSource());
+        pannelloCentrale.clear();
+        pannelloCentrale.add(pagineCreate.computeIfAbsent("utenti", a -> new UtentiMain()));
     }
 
     interface LandingPageBinder extends UiBinder<Widget, LandingPage> {
