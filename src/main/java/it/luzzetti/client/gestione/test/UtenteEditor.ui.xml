@@ -5,25 +5,23 @@
     <m:MaterialPanel>
         <m:MaterialRow>
             <m:MaterialColumn grid="s3" padding="12" border="2px solid #ffffff" textAlign="CENTER">
-                <m:MaterialButton ui:field="isDirtyButton" text="isDirty" waves="DEFAULT" backgroundColor="WHITE" textColor="BLACK"/>
+                <m:MaterialTextBox label="Nome" ui:field="nome"/>
             </m:MaterialColumn>
             <m:MaterialColumn grid="s3" padding="12" border="2px solid #ffffff" textAlign="CENTER">
-                <m:MaterialButton ui:field="editButton" text="Edit" waves="LIGHT" backgroundColor="RED" textColor="WHITE"/>
+                <m:MaterialTextBox label="Cognome" ui:field="cognome"/>
             </m:MaterialColumn>
             <m:MaterialColumn grid="s3" padding="12" border="2px solid #ffffff" textAlign="CENTER">
-                <m:MaterialButton ui:field="flushButton" text="Flush" waves="LIGHT" backgroundColor="ORANGE" textColor="WHITE"/>
+                <m:MaterialTextBox label="email" ui:field="email"/>
             </m:MaterialColumn>
             <m:MaterialColumn grid="s3" padding="12" border="2px solid #ffffff" textAlign="CENTER">
-                <m:MaterialButton ui:field="pulisciButton" text="Pulisci" waves="LIGHT" backgroundColor="BLUE" textColor="WHITE"/>
+                <m:MaterialTextBox ui:field="codiceFiscale" label="Codice Fiscale"/>
             </m:MaterialColumn>
         </m:MaterialRow>
-
         <m:MaterialRow>
-            <m:MaterialColumn>
-                <m:MaterialPanel ui:field="contenuto"></m:MaterialPanel>
+            <m:MaterialColumn grid="s3" padding="12" border="2px solid #ffffff" textAlign="CENTER">
+
             </m:MaterialColumn>
         </m:MaterialRow>
-
     </m:MaterialPanel>
 
 </ui:UiBinder>

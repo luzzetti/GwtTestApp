@@ -24,6 +24,7 @@ public class CodaMain extends Composite {
     @UiField
     protected ElementoCodaEditor elementoCodaEditor;
     IsElementoCoda elementoCoda;
+
     Driver driver = GWT.create(Driver.class);
 
     private Logger logger = Logger.getLogger(getClass().getName());
